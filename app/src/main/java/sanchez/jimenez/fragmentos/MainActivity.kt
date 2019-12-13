@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btn1.setOnClickListener(this)
         btn2.setOnClickListener(this)
         btn3.setOnClickListener(this)
+        btn.setOnClickListener(this)
     }
     override fun onClick(p0: View?) {
         var f:Fragment? = null
@@ -26,6 +27,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.btn3 -> {
                 f = Fragment_tercero.newInstance("","")
+            }
+            R.id.btn -> {
+                f = Fragment_cuarto.newInstance("","")
             }
         }
         supportFragmentManager.beginTransaction().replace(R.id.container,f!!).commitNow()
